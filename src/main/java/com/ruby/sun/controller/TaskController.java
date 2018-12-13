@@ -15,7 +15,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @GetMapping( value = "/api/task")
+    @GetMapping( value = "/api/tasks")
     public Iterable<Task> list(){
         return this.taskService.list();
     }
