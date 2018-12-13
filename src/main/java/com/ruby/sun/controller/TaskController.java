@@ -2,12 +2,10 @@ package com.ruby.sun.controller;
 
 import com.ruby.sun.entity.Task;
 import com.ruby.sun.service.TaskService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/api/tasks")
 public class TaskController {
     private TaskService taskService;
 
@@ -15,12 +13,12 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @GetMapping( value = "/api/tasks")
+    @GetMapping( value = "/list")
     public Iterable<Task> list(){
         return this.taskService.list();
     }
 
-    @PostMapping( value = "save")
+    @PostMapping( value = "/save")
     public Task save(@RequestBody Task task){
         return this.taskService.save(task);
     }

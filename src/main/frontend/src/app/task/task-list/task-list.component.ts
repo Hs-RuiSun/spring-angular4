@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Task} from "../task.model";
 import {TaskService} from "../task.service";
+import set = Reflect.set;
 
 @Component({
   selector: 'app-task-list',
@@ -22,10 +23,11 @@ export class TaskListComponent implements OnInit {
   }
 
     getDueDateLabel(task: Task) {
-        return task.isCompleted ? 'label-success' : 'label-primary';
+      return task.isCompleted ? 'label-success' : 'label-primary';
     }
 
     onTaskChange($event: any, task: Task) {
-
+      set(task, "isCompleted", $event.target.checked);
+      this.taskServic.save(task);
     }
 }
