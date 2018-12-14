@@ -1,5 +1,7 @@
 <div class="form-group">
     <input type="text"
            class="form-control"
-           placeholder="add new task">
+           placeholder="add new task"
+           (keyup.enter)="addTask($event)"
+    >
 </div>

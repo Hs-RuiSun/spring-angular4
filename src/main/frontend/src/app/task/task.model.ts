@@ -1,32 +1,11 @@
 export class Task {
-    private _id: number;
-    private _name: string;
-    private _dueDate: string;
+    public name: string;
+    public dueDate: string;
+    public isCompleted: boolean;
 
-    set id(value: number) {
-        this._id = value;
+    constructor(name: string, dueDate: string, isCompleted: boolean) {
+        this.name = name;
+        this.dueDate = dueDate;
+        this.isCompleted = isCompleted;
     }
-
-    set name(value: string) {
-        this._name = value;
-    }
-
-    set dueDate(value: string) {
-        this._dueDate = value;
-    }
-
-    set isCompleted(value: boolean) {
-        this._isCompleted = value;
-    }
-
-    private _isCompleted: boolean;
-
-    constructor(id: number, name: string, dueDate: string, isCompleted: boolean) {
-        this._id = id;
-        this._name = name;
-        this._dueDate = dueDate;
-        this._isCompleted = isCompleted;
-    }
-
-
 }
