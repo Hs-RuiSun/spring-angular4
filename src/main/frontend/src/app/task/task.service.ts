@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Task} from "./task.model";
+import {Task} from './task.model';
 
 @Injectable()
 export class TaskService implements  OnInit{

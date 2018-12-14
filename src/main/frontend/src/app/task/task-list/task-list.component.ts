@@ -27,11 +27,11 @@ export class TaskListComponent implements OnInit {
   }
 
     getDueDateLabel(task: Task) {
-      return task.isCompleted ? 'label-success' : 'label-primary';
+      return task.completed ? 'label-success' : 'label-primary';
     }
 
     onTaskChange($event: any, task: Task) {
-      set(task, "isCompleted", $event.target.checked);
-      this.taskServic.save(task);
+      task.completed = $event.target.checked;
+      this.taskServic.save(task).subscribe();
     }
 }
