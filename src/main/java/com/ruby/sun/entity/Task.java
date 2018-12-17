@@ -20,7 +20,7 @@ public class Task {
     private String name;
     //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yy-mm-dd@HH:MM:ss")
     private LocalDate dueDate;
-    private boolean isCompleted;
+    private boolean completed;
     public Task(){}
 
 }
