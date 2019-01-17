@@ -18,4 +18,8 @@ export class TaskService implements  OnInit{
     save(task: Task){
         return this.http.post("/api/tasks/save", task);
     }
+
+    getTask(taskId){
+        return this.http.get("/api/task/" + taskId);
+    }
 }

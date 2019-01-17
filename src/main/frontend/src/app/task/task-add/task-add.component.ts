@@ -8,15 +8,17 @@ import {TaskService} from "../task.service";
   styleUrls: ['./task-add.component.css']
 })
 export class TaskAddComponent implements OnInit {
-  //taskName: string;
+  defaultCategory: string = "personal";
+  defaultLevel: number = 1;
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
 
+
   addTask(event){
       console.log(event.target.value + this.getTodayAsString());
-      let task: Task = new Task(event.target.value, this.getTodayAsString(), false);
+      let task: Task = new Task(event.target.value, this.defaultCategory, this.defaultLevel, this.getTodayAsString(), false);
       console.log(task);
       this.taskService.save(task).subscribe(
           (newTask: Task) => {

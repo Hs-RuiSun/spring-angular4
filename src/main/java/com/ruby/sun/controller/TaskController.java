@@ -18,6 +18,9 @@ public class TaskController {
         return this.taskService.list();
     }
 
+    @GetMapping(value = "/{taskId}")
+    public Task getTaksById(@PathVariable int taskId){ return this.taskService.getTaskById(taskId); }
+
     @PostMapping( value = "/save")
     public Task save(@RequestBody Task task){
         return this.taskService.save(task);
