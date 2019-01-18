@@ -1,7 +1,10 @@
 <div>
     <form>
         <p>name<input value="{{task.name}}"/></p>
-        <p>category<select><option *ngFor="let category of categories" ></option></select></p>
+        <p>category
+            <select>
+                <option *ngFor="let category of keys(taskCategory)" [ngValue]="taskCategory[category]">{{taskCategory[category]}}</option>
+            </select></p>
         <p>level: <input value="{{task.level}}"/></p>
         <p>dueDate: <input value="{{task.level}}"/></p>
         <p>completed: <input value="{{task.level}}"/></p>
