@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Task} from "../task.model";
 import {TaskService} from "../task.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-task-add',
   templateUrl: './task-add.component.html',
-  styleUrls: ['./task-add.component.css']
+  styleUrls: ['./task-add.component.css'],
+    providers: [TaskService, HttpClient]
 })
 export class TaskAddComponent implements OnInit {
   defaultCategory: string = "personal";

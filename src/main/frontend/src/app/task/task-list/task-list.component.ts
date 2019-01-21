@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {Task} from "../task.model";
 import {TaskService} from "../task.service";
 import set = Reflect.set;
+import {HttpClient} from "@angular/common/http";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.css'],
+    providers: [TaskService, HttpClient]
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
