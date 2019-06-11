@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.temporal.ChronoUnit;
 
 @SpringBootApplication
@@ -26,6 +25,7 @@ public class Spring5webappApplication {
             taskService.save(new Task(4, "create configuration properties", LocalDate.now().plus(3, ChronoUnit.DAYS), false));
             taskService.save(new Task(5, "run spring boot application", LocalDate.now().plus(4, ChronoUnit.DAYS), false));
             taskService.save(new Task(6, "config h2 console", LocalDate.now().plus(6, ChronoUnit.DAYS), false));
+            taskService.save(new Task(7, "config h2 console", LocalDate.now().plus(6, ChronoUnit.DAYS), false));
         };
     }
 }

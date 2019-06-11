@@ -1,10 +1,12 @@
 package com.ruby.sun.repository;
 
 import com.ruby.sun.entity.Task;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.Repository;
+import java.util.*;
 
-@Repository
-public interface TaskRepository extends CrudRepository<Task, Integer> {
-
+public interface TaskRepository extends Repository<Task, Integer> {
+    List<Task> findAll();
+    Task findById(int taskId);
+    List<Task> findByName(String name);
+    Task save(Task task);
 }
